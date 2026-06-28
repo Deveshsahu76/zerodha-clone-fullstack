@@ -25,6 +25,11 @@ function Signup() {
       );
 
       alert(res.data.message);
+
+      // Signup successful hone ke baad Dashboard par redirect
+      window.location.href =
+        "https://zerodha-clone-dashboard-dszd.onrender.com/";
+
     } catch (err) {
       alert(
         err.response?.data?.message ||
@@ -43,7 +48,9 @@ function Signup() {
           name="fullname"
           placeholder="Full Name"
           className="form-control mb-3"
+          value={user.fullname}
           onChange={handleChange}
+          required
         />
 
         <input
@@ -51,7 +58,9 @@ function Signup() {
           name="email"
           placeholder="Email"
           className="form-control mb-3"
+          value={user.email}
           onChange={handleChange}
+          required
         />
 
         <input
@@ -59,7 +68,9 @@ function Signup() {
           name="password"
           placeholder="Password"
           className="form-control mb-3"
+          value={user.password}
           onChange={handleChange}
+          required
         />
 
         <button
